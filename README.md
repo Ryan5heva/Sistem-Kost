@@ -113,10 +113,10 @@ php artisan serve
 
 ## 📸 Screenshot
 ### Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](Screenshot/dashboard.png)
 
 ### Data Kamar
-![Kamar](screenshots/kamar.png)
+![Kamar](Screenshots/kamar.png)
 
 ### Data Penghuni
-![Penghuni](screenshots/penghuni.png)
+![Penghuni](Screenshots/penghuni.png)
