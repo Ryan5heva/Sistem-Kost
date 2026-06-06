@@ -1,17 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="d-flex justify-content-between align-items-center mb-4">
-    <h4><i class="fas fa-money-bill me-2"></i> Data Pembayaran</h4>
+<div class="page-header">
+    <div>
+        <h4><i class="fas fa-wallet me-2"></i> Data Pembayaran</h4>
+        <p>Kelola data pembayaran kost</p>
+    </div>
+    @if(auth()->user()->role == 'admin')
     <a href="{{ route('pembayaran.create') }}" class="btn btn-primary">
         <i class="fas fa-plus me-1"></i> Tambah Pembayaran
     </a>
+    @endif
 </div>
 
 <div class="card">
-    <div class="card-body">
-        <table class="table table-bordered table-hover">
-            <thead class="table-dark">
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+            <thead>
                 <tr>
                     <th>No</th>
                     <th>Penghuni</th>
@@ -19,14 +24,16 @@
                     <th>Jumlah</th>
                     <th>Status</th>
                     <th>Tanggal Bayar</th>
+                    @if(auth()->user()->role == 'admin')
                     <th>Aksi</th>
+                    @endif
                 </tr>
             </thead>
             <tbody>
                 @forelse($pembayaran as $p)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $p->penghuni->nama ?? '-' }}</td>
+                    <td><strong>{{ $p->penghuni->nama ?? '-' }}</strong></td>
                     <td>{{ $p->bulan }}/{{ $p->tahun }}</td>
                     <td>Rp {{ number_format($p->jumlah, 0, ',', '.') }}</td>
                     <td>
@@ -37,6 +44,7 @@
                         @endif
                     </td>
                     <td>{{ $p->tanggal_bayar ?? '-' }}</td>
+                    @if(auth()->user()->role == 'admin')
                     <td>
                         <a href="{{ route('pembayaran.edit', $p) }}" class="btn btn-sm btn-warning">
                             <i class="fas fa-edit"></i>
@@ -49,10 +57,11 @@
                             </button>
                         </form>
                     </td>
+                    @endif
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="7" class="text-center">Belum ada data pembayaran</td>
+                    <td colspan="7" class="text-center py-4">Belum ada data pembayaran</td>
                 </tr>
                 @endforelse
             </tbody>

@@ -1,17 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="d-flex justify-content-between align-items-center mb-4">
-    <h4><i class="fas fa-door-open me-2"></i> Data Kamar</h4>
+<div class="page-header">
+    <div>
+        <h4><i class="fas fa-door-open me-2"></i> Data Kamar</h4>
+        <p>Kelola data kamar kost</p>
+    </div>
+    @if(auth()->user()->role == 'admin')
     <a href="{{ route('kamar.create') }}" class="btn btn-primary">
         <i class="fas fa-plus me-1"></i> Tambah Kamar
     </a>
+    @endif
 </div>
 
 <div class="card">
-    <div class="card-body">
-        <table class="table table-bordered table-hover">
-            <thead class="table-dark">
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+            <thead>
                 <tr>
                     <th>No</th>
                     <th>Nomor Kamar</th>
@@ -19,14 +24,16 @@
                     <th>Harga/Bulan</th>
                     <th>Status</th>
                     <th>Fasilitas</th>
+                    @if(auth()->user()->role == 'admin')
                     <th>Aksi</th>
+                    @endif
                 </tr>
             </thead>
             <tbody>
                 @forelse($kamar as $k)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $k->nomor_kamar }}</td>
+                    <td><strong>{{ $k->nomor_kamar }}</strong></td>
                     <td>{{ $k->tipe }}</td>
                     <td>Rp {{ number_format($k->harga_per_bulan, 0, ',', '.') }}</td>
                     <td>
@@ -39,6 +46,7 @@
                         @endif
                     </td>
                     <td>{{ $k->fasilitas ?? '-' }}</td>
+                    @if(auth()->user()->role == 'admin')
                     <td>
                         <a href="{{ route('kamar.edit', $k) }}" class="btn btn-sm btn-warning">
                             <i class="fas fa-edit"></i>
@@ -51,10 +59,11 @@
                             </button>
                         </form>
                     </td>
+                    @endif
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="7" class="text-center">Belum ada data kamar</td>
+                    <td colspan="7" class="text-center py-4">Belum ada data kamar</td>
                 </tr>
                 @endforelse
             </tbody>

@@ -9,11 +9,16 @@ class AdminMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        if ($request->user()->role !== 'admin') {
-            return response()->json([
-                'success' => false,
-                'message' => 'Akses ditolak! Hanya admin yang bisa mengakses ini.',
-            ], 403);
+        if (auth()->check() && auth()->user()->role !== 'admin') {
+            // Kalau request API
+            if ($request->expectsJson()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Akses ditolak! Hanya admin yang bisa mengakses ini.',
+                ], 403);
+            }
+            // Kalau request web
+            return redirect()->route('dashboard')->with('error', 'Akses ditolak! Hanya admin.');
         }
 
         return $next($request);
