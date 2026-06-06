@@ -16,6 +16,8 @@ Aplikasi web untuk mengelola kost/kontrakan berbasis Laravel.
 - ✅ Manajemen Pembayaran (CRUD)
 - ✅ Manajemen Pengaduan (CRUD)
 - ✅ REST API dengan Laravel Sanctum
+- ✅ Role Admin & User (middleware protection)
+- ✅ Seeder data dummy
 
 ## 🛠️ Teknologi yang Digunakan
 - **Framework:** Laravel 10
@@ -61,8 +63,12 @@ DB_PASSWORD=
 # 6. Jalankan migration
 php artisan migrate
 
-# 7. Jalankan server
+# 7. Jalankan seeder
+php artisan db:seed
+
+# 8. Jalankan server
 php artisan serve
+
 ```
 
 ## 🔌 API Endpoints
@@ -110,6 +116,20 @@ php artisan serve
 | GET | /api/pengaduan/{id} | Detail pengaduan |
 | PUT | /api/pengaduan/{id} | Update pengaduan |
 | DELETE | /api/pengaduan/{id} | Hapus pengaduan |
+
+## 👥 Role & Akses
+
+| Role | Akses |
+|------|-------|
+| **Admin** | CRUD semua data |
+| **User** | Lihat data & tambah pengaduan |
+
+### Default Akun
+| Email | Password | Role |
+|-------|----------|------|
+| admin@kost.com | password123 | Admin |
+| budi@gmail.com | password123 | User |
+| siti@gmail.com | password123 | User |
 
 ## 📸 Screenshot
 ### Dashboard
