@@ -116,7 +116,7 @@ php artisan serve
 ![Dashboard](Screenshot/dashboard.png)
 
 ### Data Kamar
-![Kamar](Screenshots/kamar.png)
+![Kamar](Screenshot/kamar.png)
 
 ### Data Penghuni
-![Penghuni](Screenshots/penghuni.png)
+![Penghuni](Screenshot/penghuni.png)
