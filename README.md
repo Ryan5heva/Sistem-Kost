@@ -2,11 +2,12 @@
 
 Aplikasi web untuk mengelola kost/kontrakan berbasis Laravel.
 
-## 👨‍💻 Identitas Developer
-- **Nama:** Danar (Ryan5heva)
+## 👨‍💻 Identitas 
+- **Nama:** Ryan Sheva Danarindra (Ryan5heva)
+- **NIM:** 2305101016
+- **Kelas:** 6B
 - **Mata Kuliah:** Pemrograman Web Fullstack
 - **Prodi:** Teknik Informatika
-- **Universitas:** Universitas PGRI Madiun
 
 ## 📋 Fitur Aplikasi
 - ✅ Authentication (Login & Register)
