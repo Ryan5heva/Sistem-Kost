@@ -72,37 +72,37 @@ Laporan UTS Praktikum Pemrograman Web Fullstack
 ![Register](<Screenshot_postman/Post API register.png>)
 
 **POST /api/login**
-![Login](Screenshot_postman/2-login.png)
+![Login](<Screenshot_postman/Post API login.png>)
 
 **POST /api/logout**
-![Logout](Screenshot_postman/10-logout.png)
+![Logout](<Screenshot_postman/Post API logout.png>)
 
 ### 2. Kamar
 
 **GET /api/kamar**
-![Get Kamar](Screenshot_postman/3-get-kamar.png)
+![Get Kamar](<Screenshot_postman/Get API kamar.png>)
 
 **POST /api/kamar** *(Admin only)*
-![Post Kamar](Screenshot_postman/4-post-kamar.png)
+![Post Kamar](<Screenshot_postman/Post API kamar.png>)
 
 **PUT /api/kamar/{id}** *(Admin only)*
-![Put Kamar](Screenshot_postman/5-put-kamar.png)
+![Put Kamar](<Screenshot_postman/Put API kamar 1.png>)
 
 **DELETE /api/kamar/{id}** *(Admin only)*
-![Delete Kamar](Screenshot_postman/6-delete-kamar.png)
+![Delete Kamar](<Screenshot_postman/Delete kamar 6.png>)
 
 ### 3. Pembayaran
 
 **GET /api/pembayaran**
-![Get Pembayaran](Screenshot_postman/7-get-pembayaran.png)
+![Get pembayaran](<Screenshot_postman/Get API pembayaran.png>)
 
 **POST /api/pembayaran** *(Admin only)*
-![Post Pembayaran](Screenshot_postman/8-post-pembayaran.png)
+![Post pembayaran](<Screenshot_postman/Post API pembayaran.png>)
 
 ### 4. Me
 
 **GET /api/me**
-![Get Me](Screenshot_postman/9-get-me.png)
+![Get Me](<Screenshot_postman/Get API me.png>)
 
 ---
 
