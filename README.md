@@ -2,11 +2,9 @@
 
 Laporan UTS Praktikum Pemrograman Web Fullstack
 
-**Nama:** Ryan Sheva Danarindra
-**NIM:** *(isi sendiri)*
-**Kelas:** *(isi sendiri)*
-**Dosen:** Moch Yusuf Asyhari, S.Tr.Kom., M.Kom.
-**Universitas:** Universitas PGRI Madiun
+- **Nama:** Ryan Sheva Danarindra
+- **NIM:** 2305101016
+- **Kelas:** 6B
 
 ---
 
