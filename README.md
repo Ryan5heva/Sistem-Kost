@@ -2,67 +2,18 @@
 
 Laporan UTS Praktikum Pemrograman Web Fullstack
 
-**Nama:** Danar
-**NIM:** 2305101016
-**Kelas:** 6B
+**Nama:** Ryan Sheva Danarindra
+**NIM:** *(isi sendiri)*
+**Kelas:** *(isi sendiri)*
+**Dosen:** Moch Yusuf Asyhari, S.Tr.Kom., M.Kom.
+**Universitas:** Universitas PGRI Madiun
 
 ---
 
 ## 🗄️ ERD Database & Relasi
 
 ### Struktur Tabel
-
-**users**
-| Kolom | Tipe | Keterangan |
-|-------|------|------------|
-| id | bigint | Primary Key |
-| name | varchar | Nama user |
-| email | varchar | Email (unique) |
-| role | enum | admin / user |
-| password | varchar | Password terenkripsi |
-
-**kamar**
-| Kolom | Tipe | Keterangan |
-|-------|------|------------|
-| id | bigint | Primary Key |
-| nomor_kamar | varchar | Nomor kamar |
-| tipe | varchar | Standard/Deluxe/VIP |
-| harga_per_bulan | decimal | Harga sewa |
-| status | enum | tersedia/terisi/maintenance |
-| fasilitas | text | Daftar fasilitas |
-
-**penghuni**
-| Kolom | Tipe | Keterangan |
-|-------|------|------------|
-| id | bigint | Primary Key |
-| kamar_id | bigint | Foreign Key → kamar |
-| nama | varchar | Nama penghuni |
-| nik | varchar | NIK (unique) |
-| no_telepon | varchar | Nomor telepon |
-| alamat_asal | text | Alamat asal |
-| tanggal_masuk | date | Tanggal masuk |
-| tanggal_keluar | date | Tanggal keluar |
-| status | enum | aktif/keluar |
-
-**pembayaran**
-| Kolom | Tipe | Keterangan |
-|-------|------|------------|
-| id | bigint | Primary Key |
-| penghuni_id | bigint | Foreign Key → penghuni |
-| bulan | integer | Bulan pembayaran |
-| tahun | integer | Tahun pembayaran |
-| jumlah | decimal | Jumlah bayar |
-| status | enum | belum_bayar/sudah_bayar |
-| tanggal_bayar | date | Tanggal bayar |
-
-**pengaduan**
-| Kolom | Tipe | Keterangan |
-|-------|------|------------|
-| id | bigint | Primary Key |
-| penghuni_id | bigint | Foreign Key → penghuni |
-| judul | varchar | Judul pengaduan |
-| deskripsi | text | Isi pengaduan |
-| status | enum | pending/proses/selesai |
+![ERD Database](Screenshot_postman/ERD.png)
 
 ### Relasi Eloquent
 - `Kamar` **hasMany** `Penghuni`
