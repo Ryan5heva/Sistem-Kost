@@ -69,7 +69,7 @@ Laporan UTS Praktikum Pemrograman Web Fullstack
 ### 1. Auth
 
 **POST /api/register**
-![Register](Screenshot_postman/1-register.png)
+![Register](<Screenshot_postman/Post API register.png>)
 
 **POST /api/login**
 ![Login](Screenshot_postman/2-login.png)
